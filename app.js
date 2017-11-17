@@ -1,10 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var rabbitConn = require('./connection');
 var app = express();
 var router = express.Router();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+
+
+var rabbitConn = require('./connection');
 
 
 var chat = io.of('/chat');
@@ -93,8 +95,8 @@ router.route('/chat')
     })
   })
 
-server.listen(3030, '0.0.0.0', 
+server.listen(8080, '0.0.0.0', 
   function() { 
-    console.log('Chat at localhost:3030')
+    console.log('Chat at localhost:8080')
   }
 )

@@ -8,46 +8,40 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" 
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
-    crossorigin="anonymous"
-  >
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous" >
   
   <style> 
     .top-margin {
       margin-top: 48px;
+    }
+    .hidden
+    {
+      display: none;
+      visibility: hidden;
     }
    </style>
 </head>
 
 <body class="top-margin">
   <div class="container">
-    
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="chatName">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-          
-          <div class="modal-header">
-            <h4 class="modal-title">Hello, Who Are You?</h4>
+        <div class="username">
+          <div class="header">
+            <h4 class="title">Hello!!</h4>
           </div>
           
-          <form id="chatNameForm" method="post">
+          <form id="userbaneForm" method="post">
             <div class="modal-body">
               <div class="form-group">
                 <label for="chatName">Name</label>
                 <input type="text" class="form-control" id="chatName" name="chatName" placeholder="Your Chat Name">  
               </div>
-            </div>
-            
-            <div class="modal-footer">
               <button type="submit" class="btn btn-primary btn-block">Let's Chat</button>
             </div>
-          </form>  
-        </div>
-      </div>
-    </div>
+          </form>
+        </div>  
+        
 
-    <div class="row">
+    <div class="row hidden" id="chat-main-div">
      
       <div class="col-lg-5 col-lg-offset-3">
         <div class="response_data">
@@ -68,13 +62,9 @@
     </div>
   </div>
   
-  <script src="https://code.jquery.com/jquery-2.2.1.min.js"   
-    integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js" crossorigin="anonymous"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
   <script src="/socket.io/socket.io.js"></script>
   

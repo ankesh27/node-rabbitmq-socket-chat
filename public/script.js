@@ -1,10 +1,6 @@
 var chatSocket = io('/chat')
 
-$(document).ready(function() {
-  $('#modal').modal('show')
-})
-
-$('#chatNameForm').on('submit', function(e) {
+$('#userbaneForm').on('submit', function(e) {
   e.preventDefault()
   var name = $('#chatName').val()
   
@@ -14,9 +10,6 @@ $('#chatNameForm').on('submit', function(e) {
 
 function updateFeed (message, method) {
   var newMessage = '<div><p>' + JSON.stringify(message) + '</p></div>'
-  
-  
-  
   if (method === 'append') {
     $('.response_data').append(newMessage)
   } else if (method === 'prepend') {
@@ -33,10 +26,12 @@ function getMessages() {
       if (response.messages) {
         response.messages.reverse().map(function(message){
           updateFeed(message, 'prepend')
-          $('#modal').modal('hide')
+          $('.username').hide();
+          $('#chat-main-div').removeClass('hidden');
         })
       } else {
-        $('#modal').modal('hide')
+        $('.username').hide();
+        $('#chat-main-div').removeClass('hidden');
       }
       
       chatSocket.on('chat', function(message) {
